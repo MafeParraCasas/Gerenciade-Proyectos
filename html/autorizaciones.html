@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud Autorizacion</title>
+    <link  rel="stylesheet" href="../css/autorizaciones.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+</head>
+<body>
+
+    <div class="barrasupe" >
+        <div class="logo"> 
+          <img src="../imagenes/logo.png" class="img">
+        </div>
+    </div>
+    
+    <div class="navbar">
+        <a href="index.html">Inicio</a> 
+        <a href="citasmedicas.html">Nueva Cita</a>
+        <a href="Resultados.html">Resultados Medicos</a>
+        <a href="autorizaciones.html">Autorizaciones</a> 
+        <a href="medicamentos.html">Medicamentos</a> 
+        <a href="historia.html">Historia Clinica</a>  
+    </div>
+
+    <div class="autor">
+        <h1>Trámite de Procesos de Autorización</h1>
+
+        <div class="formulario">
+            <form >
+                <div class="form-group">
+                    <label for="iduser">Cedula paciente:</label>
+                    <input type="iduser" id="iduser" name="iduser" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo_tramite">Tipo de Trámite:</label>
+                    <select id="tipo_tramite" name="tipo_tramite" required>
+                        <option value="autorizacion_medica">Autorización Examen</option>
+                        <option value="reembolso_gastos">Autorización Procedimientos</option>
+                        <option value="reembolso_gastos">Autorización Medicamentos</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha de Solicitud:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+                <button onclick="generateRandomNumber()">Generar número de Autorización</button>
+                <input type="text" id="randomNumberInput" name="randomNumberInput">
+
+                    <script>
+                        function generateRandomNumber() {
+                        // Genera un número aleatorio entre 0 y 100
+                        var randomNumber = Math.random() * 100;
+
+                         // Asigna el número aleatorio al input
+                        document.getElementById('randomNumberInput').value = randomNumber;
+                        }
+                    </script>
+
+                <div class="form-group">
+                    <label for="comentarios">Comentarios:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4" required></textarea>
+                    <label for="comentarios">*Descripción breve de Proceso a solicitar Autorización</label>
+                </div>
+                <button type="submit">Enviar Solicitud</button>  
+                  <a href="validar_autorizacion.html"> Validar Autorizaciones</a>
+            </form>
+
+            
+            
+        </div>
+
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Mi Empresa - Todos los derechos reservados</p>
+        </footer>
+
+
+        <script>
+            
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe normalmente
+
+            // Obtener los valores del formulario
+            const iduser = document.getElementById('iduser').value;
+            const tipo_tramite = document.getElementById('tipo_tramite').value;
+            const fecha = document.getElementById('fecha').value;
+            const randomNumberInput = document.getElementById('randomNumberInput').value;
+            const comentarios = document.getElementById('comentarios').value;
+
+            // Crear un objeto con la información de la solicitud
+            const solicitud = {
+                iduser: iduser,
+                tipo_tramite: tipo_tramite,
+                fecha: fecha,
+                randomNumberInput: randomNumberInput,
+                comentarios: comentarios
+            };
+
+            // Generar una clave única para la solicitud (puedes usar el número de cédula o el tipo de trámite)
+            const solicitudKey = `${iduser}_${tipo_tramite}`;
+
+            // Guardar la solicitud en localStorage
+            localStorage.setItem(solicitudKey, JSON.stringify(solicitud));
+
+            // Limpiar el formulario después de guardar la solicitud
+            form.reset();
+
+            // Permitir que el formulario se envíe después de procesar los datos
+            form.submit();
+        });
+    });
+</script>
+        
+
+</body>
+</html>

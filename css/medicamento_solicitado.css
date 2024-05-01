@@ -1,0 +1,80 @@
+.barrasupe{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.navbar { 
+    font-size: larger; 
+background-color: #179cf5e8; /* Color de fondo de la barra de navegación */ 
+overflow: hidden; /* Para manejar el overflow de los elementos flotantes */
+}
+
+.navbar a {
+float: left; /* Para alinear los elementos a la izquierda */ 
+display: block; /* Para que cada enlace sea un bloque y ocupe toda la anchura disponible */
+color: #f2f2f2; /* Color del texto de los enlaces */ 
+text-align: center; /* Para centrar el texto dentro de los enlaces */
+padding: 14px 20px; /* Espaciado interno de los enlaces */
+text-decoration: none; /* Quita el subrayado de los enlaces */
+}
+
+.navbar a:hover { 
+color: black; /* Cambia el color del texto del enlace cuando se pasa el ratón por encima */
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    margin-top: 5%;
+}
+
+.resuauto{
+    margin-top: 2%;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    
+}
+
+.datos-autorizacion {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dato {
+    margin-bottom: 15px;
+}
+
+.dato label {
+    font-weight: bold;
+}
+
+.dato span {
+    display: inline-block;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+footer {
+    background-color: #179cf5e8;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+    }

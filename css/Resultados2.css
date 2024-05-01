@@ -1,0 +1,63 @@
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.resultados {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.resultado {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.resultado h2 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.resultado p {
+    margin: 5px 0;
+}
+
+.resultado p strong {
+    font-weight: bold;
+}
+
+
+
+.procedimiento {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.procedimiento h2 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.procedimiento p {
+    margin: 5px 0;
+}
+
+.procedimiento p strong {
+    font-weight: bold;
+}
+
+footer {
+    background-color: #179cf5e8;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+    }
